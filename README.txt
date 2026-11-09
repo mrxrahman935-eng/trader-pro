@@ -1,21 +1,10 @@
-TRADER PRO — Android-ready offline trading journal
+TRADER PRO - Personal Trading Journal
 
-QUICK START (free):
-1. Upload all files in this folder to a static hosting service that supports HTTPS (for example, GitHub Pages or Netlify).
-2. Open the deployed website in Chrome on your Android phone.
-3. Chrome menu (⋮) > Install app / Add to Home screen.
-4. Open TRADER PRO from your home screen. It works offline after the first successful load.
+Updated version: automatic estimated Profit/Loss for Forex, Gold and Crypto.
+Enter market, symbol, Buy/Sell, entry price, exit price, quantity and fees. P/L is calculated automatically.
 
-Features:
-- Forex, Gold and Crypto trade log
-- Manual realized P/L, entry/exit, risk and notes
-- Net P/L, win rate, total trades and average P/L
-- Market filter, delete trades, CSV export
-- English/Bangla toggle
-- Local browser storage and offline cache
+Formula: Buy = (Exit - Entry) x Quantity - Fees; Sell = (Entry - Exit) x Quantity - Fees.
+Quantity meaning: Forex = base-currency units; Gold = ounces; Crypto = coins.
+USD estimate assumptions: Forex symbols quoted in USD (e.g. EURUSD); Gold XAUUSD; Crypto quoted in USD or USDT. Non-USD quote currencies require conversion and are not automatically converted. Contract specifications, pip value, leverage, funding, spread and broker-specific fees may change actual results.
 
-Important:
-- Data is stored in this browser on this device. It is not synced or backed up.
-- Clearing Chrome site data, uninstalling/clearing browser storage, or changing browsers can erase the journal.
-- Export CSV regularly to keep a backup.
-- This is a journal, not a broker connection or financial advice.
+Upload all files to the root of your GitHub repository, replacing existing files, then wait for GitHub Pages to deploy. Existing local trades are kept in browser storage. Export CSV before clearing browser data.
