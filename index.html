@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080b10"><meta name="description" content="Private offline trading journal for Forex, Gold and Crypto.">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon.svg">
+<title>TRADER PRO</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div><div class="brand">TRADER<span> PRO</span></div><div class="sub" data-i18n="subtitle">PERSONAL TRADING JOURNAL</div></div>
+  <button id="langBtn" class="ghost" aria-label="Change language">বাংলা</button>
+</header>
+<main>
+  <section class="welcome"><div><p class="eyebrow" data-i18n="overview">YOUR PERFORMANCE</p><h1 data-i18n="dashboard">Dashboard</h1><p class="muted" data-i18n="local">Private • Saved on this device</p></div><button id="addBtn" class="primary">＋ <span data-i18n="addTrade">Add Trade</span></button></section>
+  <section class="stats">
+    <article class="stat"><span data-i18n="net">Net P/L</span><strong id="net">$0.00</strong><small id="netHint">All trades</small></article>
+    <article class="stat"><span data-i18n="winRate">Win rate</span><strong id="winRate">0%</strong><small id="winLoss">0W / 0L</small></article>
+    <article class="stat"><span data-i18n="trades">Total trades</span><strong id="total">0</strong><small data-i18n="recorded">Recorded trades</small></article>
+    <article class="stat"><span data-i18n="avg">Average P/L</span><strong id="avg">$0.00</strong><small data-i18n="perTrade">Per trade</small></article>
+  </section>
+  <section class="panel">
+    <div class="panel-head"><div><p class="eyebrow" data-i18n="journal">JOURNAL</p><h2 data-i18n="history">Trade history</h2></div><div class="tools"><select id="marketFilter"><option value="All">All markets</option><option>Forex</option><option>Gold</option><option>Crypto</option></select><button id="exportBtn" class="secondary" data-i18n="export">Export CSV</button></div></div>
+    <div id="empty" class="empty"><div class="empty-icon">↗</div><h3 data-i18n="emptyTitle">No trades yet</h3><p data-i18n="emptyText">Add your first trade to start tracking performance.</p><button class="primary" id="emptyAdd" data-i18n="addFirst">＋ Add your first trade</button></div>
+    <div class="table-wrap"><table><thead><tr><th data-i18n="date">DATE</th><th data-i18n="market">MARKET</th><th data-i18n="pair">SYMBOL</th><th data-i18n="side">SIDE</th><th data-i18n="result">RESULT</th><th></th></tr></thead><tbody id="tradeRows"></tbody></table></div>
+  </section>
+  <section class="bottom-note"><span class="dot"></span><span data-i18n="privacy">Your journal is stored locally on this device. Clearing browser data may erase it.</span></section>
+</main>
+<dialog id="tradeDialog">
+<form id="tradeForm" method="dialog">
+<div class="dialog-head"><div><p class="eyebrow" data-i18n="newEntry">NEW ENTRY</p><h2 data-i18n="addTrade">Add Trade</h2></div><button type="button" id="closeDialog" class="close">×</button></div>
+<div class="form-grid">
+<label><span data-i18n="date">Date</span><input id="date" type="date" required></label>
+<label><span data-i18n="market">Market</span><select id="market"><option>Forex</option><option>Gold</option><option>Crypto</option></select></label>
+<label><span data-i18n="symbol">Symbol</span><input id="symbol" placeholder="e.g. EURUSD, XAUUSD, BTCUSDT" required maxlength="20"></label>
+<label><span data-i18n="side">Side</span><select id="side"><option value="Buy">Buy / Long</option><option value="Sell">Sell / Short</option></select></label>
+<label><span data-i18n="entry">Entry price</span><input id="entry" type="number" step="any" placeholder="0.00"></label>
+<label><span data-i18n="exit">Exit price</span><input id="exit" type="number" step="any" placeholder="0.00"></label>
+<label><span data-i18n="profit">Profit / Loss ($)</span><input id="pnl" type="number" step="any" placeholder="e.g. 25 or -10" required></label>
+<label><span data-i18n="risk">Risk ($)</span><input id="risk" type="number" step="any" min="0" placeholder="Optional"></label>
+<label class="full"><span data-i18n="notes">Notes / Strategy</span><textarea id="notes" rows="3" placeholder="Why did you take this trade?"></textarea></label>
+</div>
+<p class="hint" data-i18n="pnlHint">Enter your realized P/L manually. Positive = profit, negative = loss.</p>
+<div class="dialog-actions"><button type="button" id="cancelBtn" class="secondary" data-i18n="cancel">Cancel</button><button type="submit" class="primary" data-i18n="saveTrade">Save Trade</button></div>
+</form></dialog>
+<script src="app.js"></script>
+</body></html>

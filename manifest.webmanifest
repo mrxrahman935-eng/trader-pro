@@ -1,0 +1,17 @@
+{
+  "name": "TRADER PRO - Trading Journal",
+  "short_name": "TRADER PRO",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#080b10",
+  "theme_color": "#080b10",
+  "description": "Private offline trading journal for Forex, Gold and Crypto.",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
